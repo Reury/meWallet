@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Inserir Receita"
+        android:text="@string/inserir_receita"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/descricao"
@@ -38,60 +38,75 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/descReceita"
+            android:id="@+id/Receita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descrição" />
+            android:hint="@string/descri_o" />
     </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editValor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:ems="10"
-        android:hint="Valor"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descricao" />
-
     <Button
-        android:id="@+id/insert"
+        android:id="@+id/insere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
         android:background="#FF7005"
         android:text="@string/inserir"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editValor" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ToggleButton
-        android:id="@+id/toggleButton11"
+        android:id="@+id/toggleReceita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
-        android:text="ToggleButton"
-        android:textOff="credito"
-        android:textOn="credito"
+        android:background="@drawable/my_btn_toggle"
+        android:checked="true"
+        android:text="@string/receita"
+        android:textOff="@string/receita"
+        android:textOn="@string/receita"
         app:layout_constraintStart_toStartOf="@+id/descricao"
         app:layout_constraintTop_toBottomOf="@+id/descricao" />
 
     <ToggleButton
-        android:id="@+id/toggleButton12"
+        android:id="@+id/toggleDespesa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:text="ToggleButton"
-        android:textOff="DEBITO"
-        android:textOn="DEBITO"
+        android:background="@drawable/my_btn_toggle"
+        android:checked="false"
+        android:text="@string/despesa"
+        android:textOff="@string/despesa"
+        android:textOn="@string/despesa"
         app:layout_constraintEnd_toEndOf="@+id/descricao"
         app:layout_constraintTop_toBottomOf="@+id/descricao" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/editvalortext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="173dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="177dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/descricao">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/digite_o_valor" />
+    </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>

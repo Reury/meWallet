@@ -32,9 +32,12 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
 
-        Receita receita = extrato.get(i);
-        myViewHolder.receita.setText(receita.getReceita());
-        myViewHolder.valor.setText(receita.getValor());
+
+        Receita conta = extrato.get(i);
+        String categoria = conta.getCategoria();
+        String valor = conta.getValor();
+        myViewHolder.receita.setText(categoria);
+        myViewHolder.valor.setText(valor);
 
     }
 

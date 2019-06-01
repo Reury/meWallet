@@ -3,21 +3,50 @@ package com.example.mewallet.model;
 import java.io.Serializable;
 
 public class Receita implements Serializable {
-    public Receita(String receita, String valor) {
-        Receita = receita;
+    public Receita(String categoria, String valor, String descricao) {
+        this.categoria = categoria;
+        this.valor = valor;
+        this.descricao = descricao;
+    }
+
+    public Receita(String categoria, String valor) {
+        this.categoria = categoria;
         this.valor = valor;
     }
 
-    public Receita(){
-
+    public Receita() {
+        this.id = id;
     }
 
-    public String getReceita() {
-        return Receita;
+    private Long id;
+    private String categoria = "categoria";
+    private String valor = "valor";
+    private String descricao = "descricao";
+
+    public float getSaldo() {
+        return saldo;
     }
 
-    public void setReceita(String receita) {
-        Receita = receita;
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    private float saldo = 0;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getValor() {
@@ -28,14 +57,6 @@ public class Receita implements Serializable {
         this.valor = valor;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -44,10 +65,7 @@ public class Receita implements Serializable {
         this.descricao = descricao;
     }
 
-    private Long id;
-    private String Receita;
-    private String valor;
-    private String descricao;
+
 
 
 }

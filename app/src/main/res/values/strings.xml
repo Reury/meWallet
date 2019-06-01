@@ -20,4 +20,9 @@
     <string name="valor">valor</string>
     <string name="inserir_receita">Inserir Receita</string>
     <string name="inserir">Inserir</string>
+    <string name="descri_o">Descrição</string>
+    <string name="credito">credito</string>
+    <string name="digite_o_valor">Digite o valor</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="despesa">Despesa</string>
 </resources>

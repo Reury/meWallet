@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    public static int VERSION = 3;
+    public static int VERSION = 1;
     public static String NOME_DB = "DB_EXTRATO";
     public static String TABELA_EXTRATO = "extrato";
 
@@ -19,9 +19,12 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE IF NOT EXISTS " + TABELA_EXTRATO
-        + "( id INTEGER PRIMARY KEY AUTOINCREMENT, "
-        + " categoria VARCHAR, "
-        + " valor VARCHAR " + ")";
+                + "( id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "categoria VARCHAR, "
+                + "valor VARCHAR, "
+                + "descricao VARCHAR, "
+                + "saldo VARCHAR " + ")";
+
 
         try {
             db.execSQL(sql);
@@ -37,8 +40,11 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS " + TABELA_EXTRATO + " ;";
-
+        String sql = "DROP TABLE IF EXISTS "+ TABELA_EXTRATO
+                + "(id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "categoria VARCHAR, "
+                + "valor VARCHAR, "
+                + "descricao VARCHAR " + ")";
         try {
             db.execSQL(sql);
             onCreate(db);

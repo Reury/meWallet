@@ -1,7 +1,5 @@
 package com.example.mewallet.activity;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,12 +18,30 @@ import android.view.Menu;
 import com.example.mewallet.R;
 import com.example.mewallet.fragment.InserirReceitaFragment;
 import com.example.mewallet.fragment.ExtratoFragment;
-import com.example.mewallet.helper.DbHelper;
+import com.example.mewallet.helper.ReceitaDAO;
+import com.example.mewallet.model.Receita;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public List<Receita> getExtrato() {
+        return extrato;
+    }
 
+    public void setExtrato(List<Receita> extrato) {
+        this.extrato = extrato;
+    }
+
+    private List<Receita> extrato;
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

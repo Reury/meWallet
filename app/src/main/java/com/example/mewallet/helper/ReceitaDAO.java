@@ -72,14 +72,12 @@ public class ReceitaDAO implements  IReceitaDao{
             String categoria = c.getString( c.getColumnIndex("categoria"));
             String valor = c.getString(c.getColumnIndex("valor"));
             String descricao = c.getString(c.getColumnIndex("descricao"));
-            String saldo = c.getString(c.getColumnIndex("saldo"));
             receita.setId(id);
             receita.setCategoria(categoria);
             receita.setValor(valor);
             receita.setDescricao(descricao);
-            float s = Float.parseFloat(saldo);
-            receita.setSaldo(s);
             extrato.add(receita);
+
         }
 
         return extrato;

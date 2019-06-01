@@ -22,9 +22,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 + "( id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "categoria VARCHAR, "
                 + "valor VARCHAR, "
-                + "descricao VARCHAR, "
-                + "saldo VARCHAR " + ")";
-
+                + "descricao VARCHAR " + ")";
 
         try {
             db.execSQL(sql);

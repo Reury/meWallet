@@ -1,6 +1,7 @@
 package com.example.mewallet.fragment;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,12 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.mewallet.R;
 import com.example.mewallet.activity.MainActivity;
 import com.example.mewallet.adapter.Adapter;
+import com.example.mewallet.helper.DbHelper;
 import com.example.mewallet.helper.ReceitaDAO;
 import com.example.mewallet.model.Receita;
+import com.example.mewallet.model.Saldo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +29,7 @@ public class ExtratoFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private List<Receita> extrato = new ArrayList<>();
+    private TextView saldoExtrato;
 
     public ExtratoFragment() {
         // Required empty public constructor
@@ -75,8 +80,9 @@ public class ExtratoFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_extrato, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);
-
-
+        saldoExtrato = view.findViewById(R.id.saldoExtrato);
+        Saldo saldo = new Saldo(0);
+        String s = Float.toString(saldo.getSaldo());
 
         //listagem para exemplo
         //InserirReceitaFragment receita = new InserirReceitaFragment();
@@ -90,8 +96,6 @@ public class ExtratoFragment extends Fragment {
         extrato = receita.listar();
         Adapter adapter = new Adapter(extrato);
 
-
-
         // configurar RecylerView
         RecyclerView.LayoutManager layoutManager =
                 new LinearLayoutManager(getActivity().getApplicationContext());
@@ -99,6 +103,18 @@ public class ExtratoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
+//        // Movimentando o Saldo
+//        Float saldoResult ;
+//        Float inputReceita;
+//        saldoExtrato.setText("R$ " + s);
+//        for(int i=0; i< extrato.size();i++){
+//            if (extrato.get(i).getCategoria() == "credito") {
+//                inputReceita = Float.toString(extrato.get(i).getValor());
+//                saldoResult = 0 + extrato.get(i).getValor();
+//            } else {
+//
+//            }
+//        }
 
         return view;
     }

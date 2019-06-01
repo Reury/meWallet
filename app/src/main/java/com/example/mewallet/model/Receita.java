@@ -23,16 +23,6 @@ public class Receita implements Serializable {
     private String valor = "valor";
     private String descricao = "descricao";
 
-    public float getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
-
-    private float saldo = 0;
-
     public Long getId() {
         return id;
     }

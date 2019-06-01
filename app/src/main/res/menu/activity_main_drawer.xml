@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Extrato"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="Extrato" />
+        <item
+            android:id="@+id/nav_Declarar_Receita"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Inserir Receita" />
+
+    </group>
+
+    <item android:title="Outros">
+        <menu>
+            <item
+                android:id="@+id/nav_investimento"
+                android:icon="@drawable/ic_show_chart_black_24dp"
+                android:title="Investimento" />
+            <item
+                android:id="@+id/nav_sobre"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="sobre" />
+        </menu>
+    </item>
+
+</menu>

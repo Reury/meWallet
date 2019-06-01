@@ -1,0 +1,91 @@
+package com.example.mewallet.fragment;
+
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.example.mewallet.R;
+import com.example.mewallet.adapter.Adapter;
+import com.example.mewallet.model.Receita;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class ExtratoFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private List<Receita> extrato = new ArrayList<>();
+
+    public ExtratoFragment() {
+        // Required empty public constructor
+    }
+//    public void gerarExtrato(){
+//        Receita receita1 = new Receita("credito", "150,00");
+//        this.extrato.add(receita1);
+//        Receita receita2 = new Receita("debito", "20");
+//        this.extrato.add(receita2);
+//        Receita receita3 = new Receita("credito", "35,00");
+//        this.extrato.add(receita3);
+//        Receita receita4 = new Receita("credito", "35,00");
+//        this.extrato.add(receita4);
+//        Receita receita5 = new Receita("credito", "35,00");
+//        this.extrato.add(receita5);
+//        Receita receita6 = new Receita("credito", "3500,00");
+//        this.extrato.add(receita6);
+//        Receita receita7 = new Receita("debito", "40");
+//        this.extrato.add(receita7);
+//        Receita receita8 = new Receita("debito", "30");
+//        this.extrato.add(receita8);
+//        Receita receita9 = new Receita("debito", "120");
+//        this.extrato.add(receita9);
+//        Receita receita10 = new Receita("debito", "200");
+//        this.extrato.add(receita10);
+//        Receita receita11 = new Receita("debito", "20");
+//        this.extrato.add(receita11);
+//
+//    }
+
+
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_extrato, container, false);
+
+        recyclerView = view.findViewById(R.id.recyclerView);
+
+
+
+        //listagem para exemplo
+        InserirReceitaFragment receita = new InserirReceitaFragment();
+
+        // configurar adapter
+        Adapter adapter = new Adapter(receita.getExtrato());
+
+
+
+        // configurar RecylerView
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+
+
+        return view;
+    }
+
+}

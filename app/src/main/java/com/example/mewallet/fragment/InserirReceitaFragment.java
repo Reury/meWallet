@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.mewallet.R;
@@ -95,6 +96,7 @@ public class InserirReceitaFragment extends Fragment {
                 receita.setCategoria(categoriaSelecionada);
                 receita.setValor(editValor.getText().toString());
                 receitaDAO.salvar(receita);
+                Toast.makeText(getActivity().getApplicationContext(),"Salvo com Sucesso", Toast.LENGTH_SHORT).show();
                 getActivity().getSupportFragmentManager().getPrimaryNavigationFragment();
             }
         });

@@ -72,9 +72,8 @@ public class ReceitaDAO implements  IReceitaDao{
             String categoria = c.getString(c.getColumnIndex("categoria"));
             if(categoria.equals("Debito")){
                 String valor = c.getString(c.getColumnIndex("valor"));
-                despesa = Double.parseDouble(valor);
-                despesa = despesa * -1;
-                despesas += despesa;
+                despesa = Double.parseDouble(valor) * -1;
+                despesas -= despesa;
             }else{
                 String valor = c.getString(c.getColumnIndex("valor"));
                 receita = Double.parseDouble(valor);
@@ -82,7 +81,12 @@ public class ReceitaDAO implements  IReceitaDao{
 
             }
         }
-    somaLista = receitas - despesas;
+//        vendo os valores no logcat
+//        String rec = Double.toString(receitas);
+//        Log.e("valor receita",rec);
+//        String deb = Double.toString(despesas);
+//        Log.e("valor despesas",deb);
+        somaLista = receitas - despesas;
 
 
         return somaLista;

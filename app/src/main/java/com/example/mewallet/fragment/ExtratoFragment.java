@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.mewallet.R;
 import com.example.mewallet.adapter.Adapter;
 import com.example.mewallet.helper.ReceitaDAO;
+import com.example.mewallet.helper.RecyclerItemClickListener;
 import com.example.mewallet.model.Pessoa;
 import com.example.mewallet.model.Receita;
 
@@ -96,7 +99,7 @@ public class ExtratoFragment extends Fragment {
         extrato = receita.listar();
         saldo = receita.soma();
         saldoR = Double.toString(saldo);
-        saldoExtrato.setText(saldoR);
+        saldoExtrato.setText("R$ "+saldoR);
         Adapter adapter = new Adapter(extrato);
 
         // configurar RecylerView
@@ -106,6 +109,29 @@ public class ExtratoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
+
+        //adicionar evento de clique
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getActivity().getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Log.i("clique", "onItemClick");
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+                                Log.i("clique", "onLongItemClick");
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                ));
 
 
         return view;

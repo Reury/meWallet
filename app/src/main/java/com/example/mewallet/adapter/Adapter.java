@@ -37,7 +37,12 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         String categoria = conta.getCategoria();
         String valor = conta.getValor();
         myViewHolder.receita.setText(categoria);
-        myViewHolder.valor.setText(valor);
+        if(conta.getCategoria().equals("Debito")){
+            myViewHolder.valor.setText("R$ " + "-"+ valor);
+        }else{
+            myViewHolder.valor.setText("R$" + valor);
+        }
+
 
     }
 

@@ -55,6 +55,39 @@ public class ReceitaDAO implements  IReceitaDao{
         return false;
     }
 
+    /*
+    metodo para somar os numeros da lista
+     */
+    public double soma(){
+        double somaLista = 0;
+        double despesa = 0;
+        double despesas = 0;
+        double receita = 0;
+        double receitas = 0;
+        List<Receita> extrato = new ArrayList<>();
+
+        String sql="SELECT * FROM " + DbHelper.TABELA_EXTRATO + " ;";
+        Cursor c = le.rawQuery(sql,null);
+        while (c.moveToNext()){
+            String categoria = c.getString(c.getColumnIndex("categoria"));
+            if(categoria.equals("Debito")){
+                String valor = c.getString(c.getColumnIndex("valor"));
+                despesa = Double.parseDouble(valor);
+                despesa = despesa * -1;
+                despesas += despesa;
+            }else{
+                String valor = c.getString(c.getColumnIndex("valor"));
+                receita = Double.parseDouble(valor);
+                receitas += receita;
+
+            }
+        }
+    somaLista = receitas - despesas;
+
+
+        return somaLista;
+    }
+
     @Override
     public List<Receita> listar() {
 

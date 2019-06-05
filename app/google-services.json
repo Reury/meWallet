@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1070721162357",
+    "firebase_url": "https://mewallet-8c425.firebaseio.com",
+    "project_id": "mewallet-8c425",
+    "storage_bucket": "mewallet-8c425.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070721162357:android:6c9fedcb9bc5afdb",
+        "android_client_info": {
+          "package_name": "com.example.mewallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070721162357-sh4ouahs7dhurdvhr47l9kj3e1ojm0oq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mewallet",
+            "certificate_hash": "fa817594b9e1b971804c4426624e4be09513a18f"
+          }
+        },
+        {
+          "client_id": "1070721162357-km7g2v2b2hqhsbif14lpal22t16e1mo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARosTuNwVzMi8iJKwG8wSb9arEpXGIR6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070721162357-km7g2v2b2hqhsbif14lpal22t16e1mo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

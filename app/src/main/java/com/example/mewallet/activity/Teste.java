@@ -47,19 +47,22 @@ public class Teste extends IntroActivity {
 //                .build()
 //        );
 
-        setNavigationPolicy(new NavigationPolicy() {
-            @Override public boolean canGoForward(int position) {
-                return true;
-            }
-
-            @Override public boolean canGoBackward(int position) {
-                return false;
-            }
-        });
+//        setNavigationPolicy(new NavigationPolicy() {
+//            @Override public boolean canGoForward(int position) {
+//                return true;
+//            }
+//
+//            @Override public boolean canGoBackward(int position) {
+//                return false;
+//            }
+//        });
         verificarSeUsuarioLogado();
 
         setButtonNextVisible(false);
         setButtonBackVisible(false);
+
+
+
 
         addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
@@ -88,7 +91,11 @@ public class Teste extends IntroActivity {
 
 
     }
-
+    @Override
+    public void finish() {
+        startActivity(new Intent(this,Teste.class));
+        super.finish();
+    }
 
     public void btEntrar(View view){
         startActivity(new Intent(this,LoginActivity.class));

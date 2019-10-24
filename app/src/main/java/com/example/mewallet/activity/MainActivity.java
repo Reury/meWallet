@@ -18,10 +18,9 @@ import android.view.Menu;
 import com.example.mewallet.R;
 import com.example.mewallet.fragment.InserirReceitaFragment;
 import com.example.mewallet.fragment.ExtratoFragment;
-import com.example.mewallet.helper.ReceitaDAO;
+import com.example.mewallet.fragment.InvestimentoFragment;
 import com.example.mewallet.model.Receita;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
@@ -106,12 +105,16 @@ public class MainActivity extends AppCompatActivity
             fragment.replace(R.id.frameContainer,receitaPrincipal);
             fragment.commit();
         } else if (id == R.id.nav_Declarar_Receita) {
-            InserirReceitaFragment InserirReceita = new InserirReceitaFragment();
+            InserirReceitaFragment inserirReceita = new InserirReceitaFragment();
             FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
-            fragment.replace(R.id.frameContainer,InserirReceita);
+            fragment.replace(R.id.frameContainer,inserirReceita);
             fragment.commit();
 
         } else if (id == R.id.nav_investimento) {
+            InvestimentoFragment investimentoFragment = new InvestimentoFragment();
+            FragmentTransaction fragment = getSupportFragmentManager().beginTransaction();
+            fragment.replace(R.id.frameContainer, investimentoFragment);
+            fragment.commit();
 
         } else if (id == R.id.nav_sobre) {
 
